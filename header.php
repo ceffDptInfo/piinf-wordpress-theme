@@ -49,6 +49,7 @@
                     )
                 )
                 ?>
+
             </div>
         </nav>
 
@@ -66,3 +67,10 @@
                 ?>
             </h1>
         </header>
+        <!-- Toute cette partie crée le menu et le hamburger en mobile -->
+        <input type="checkbox" id="nav-trigger">
+        <label id="hamburger" for="nav-trigger">
+            <img src="wp-content/themes/piinf-wordpress-theme/assets/images/menu_mobile.png">
+        </label>
+        <!-- Cette partie appelle la fonction de la classe Walker -->
+        <?php wp_nav_menu(array('menu' => 'secondary', 'items_wrap' => '<nav id="menu"><ul>%3$s</ul></nav>', 'walker' => new followjulien_Walker(), 'container' => false, 'menu_class' => '', 'theme_location' => 'secondary', 'fallback_cb' => false)); ?>

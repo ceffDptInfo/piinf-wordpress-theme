@@ -1,0 +1,65 @@
+/* Menu css horizontal basé sur des listes à puces */
+/* Version 1.0 / 16.2.2015 / J. Hirtzel-c. Guerdat */
+
+/* Taille, couleur de fond et police de la zone de menu */
+nav {
+  font-family: Verdana, Arial, Sans-serif; /* Police du meu */
+}
+
+/* Marges des élément ul */
+nav ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Items de menu par défaut */
+nav li {
+  background: white; /* Couleur de fond du menu */
+  width: 250px; /* Largeur du menu */
+  float: left;
+  position: relative;
+  list-style: none;
+}
+
+/* Couleur des éléments de menu survolés */
+nav li:hover {
+  background: yellow; /* Couleur de fond des éléments de menu survolés */
+  color: black; /* Couleur de texte des éléments de menu survolés */
+}
+
+/* Affichage des sous-menus survolés */
+nav li:hover > ul {
+  display: block;
+}
+
+/* Sous-menus de premier niveau */
+nav ul ul {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+/* Sous-menus à partir du 2ème niveau */
+nav ul ul ul {
+  left: 250px; /* A adapter à la largeur des li */
+  position: absolute;
+  top: 0px;
+  display: none;
+}
+
+/* Liens */
+nav li a {
+  display: block;
+  text-decoration: none;
+  padding: 4px;
+}
+#hamburger {
+  display: none;
+}
+#nav-trigger {
+  display: none;
+}
+#nav-trigger:checked ~ nav {
+  display: none;
+}

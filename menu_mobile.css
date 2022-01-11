@@ -1,0 +1,22 @@
+body,
+html {
+  padding: 0px;
+  margin: 0px;
+}
+nav#menu {
+  display: none;
+  background: #ccc;
+  width: 100%;
+}
+#nav-trigger {
+  display: none;
+}
+
+#nav-trigger:checked ~ nav {
+  display: block;
+}
+
+nav#menu ul {
+  padding: 0px;
+  margin: 0px;
+}
