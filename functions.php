@@ -25,6 +25,8 @@ function followjulien_register_styles()
 {
     $version = wp_get_theme()->get('Version');
     wp_enqueue_style('followjulien-style', get_template_directory_uri() . "/style.css", array('followjulien-bootstrap'), $version, 'all');
+    wp_enqueue_style('followjulien-style', get_stylesheet_uri());
+    wp_style_add_data('followjulien-style', 'rtl', 'replace');
     wp_enqueue_style('followjulien-menu_css', get_template_directory_uri() . "/menu_h.css", array(), $version, 'screen and (min-width:640px)');
     wp_enqueue_style('followjulien-menu_css_v', get_template_directory_uri() . "/menu_mobile.css", array(), $version, 'screen and (max-width:640px)');
     wp_enqueue_style('followjulien-bootstrap', "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css", array(), "4.4.1", 'all');
@@ -119,3 +121,10 @@ class followjulien_Walker extends Walker_Nav_Menu
         $output .= "</li>\n";
     }
 }
+
+add_action('init', function () {
+    pll_register_string('piinf-wordpress-theme-test', "test");
+    pll_register_string('piinf-wordpress-theme-haha', "haha");
+    pll_register_string('piinf-wordpress-theme-tedst', "tedst");
+    pll_register_string('piinf-wordpress-theme-tessst', "tessst");
+});
